@@ -1,0 +1,8 @@
+//
+// Created by yi on 4/8/19.
+//
+
+#ifndef RECTANGLE_SEARCH_RECTANGLE_H
+#define RECTANGLE_SEARCH_RECTANGLE_H
+
+#endif //RECTANGLE_SEARCH_RECTANGLE_H
