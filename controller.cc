@@ -41,6 +41,7 @@ void Controller::ReadArea(std::string filename) {
   else{
     CannotOpenFile(filename);
   }
+
 }
 
 void Controller::PrintRectangleList() {
@@ -80,5 +81,14 @@ std::vector<int> Controller::Spilt(std::string line) {
   return res;
 }
 
+void Controller::BinarySearch() {
+  for(int i = 0; i < rectangle_list.size(); i++){
+    sorted_rectangle_list.emplace_back(Rectangle(rectangle_list[i][1],rectangle_list[i][2],rectangle_list[i][3],rectangle_list[i][4]));
+    std::sort(sorted_rectangle_list.begin(),sorted_rectangle_list.end());
+  }
+  for(int i=0;i<sorted_rectangle_list.size();i++){
+    std::cout<<sorted_rectangle_list[i].GetArea()<<std::endl;
+  }
+}
 
 

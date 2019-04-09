@@ -9,7 +9,9 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 #include "exception.h"
+#include "rectangle.h"
 // A controller that split the task into parts
 // It stores the input data as vectors
 
@@ -25,6 +27,8 @@ class Controller{
 
   //Get a vector that contains rectangle coordinates
   std::vector<std::vector<int>> GetRectangleList();
+
+  void BinarySearch();
 
   //Print out area list             #just for test
   void PrintAreaList();
@@ -44,5 +48,6 @@ class Controller{
 
   std::vector<int> area_list;
   std::vector<std::vector<int>> rectangle_list;
+  std::vector<Rectangle> sorted_rectangle_list;
 };
 #endif //RECTANGLE_SEARCH_CONTROLLER_H
