@@ -5,6 +5,7 @@
 Controller::Controller(int argc, char *argv[]) {
   CheckInputNum(argc);
   ReadInputFile(argv);
+  logfile_name=argv[3];
 }
 
 void Controller::ReadInputFile(char *argv[]) {
@@ -19,7 +20,7 @@ void Controller::SearchInBinary() {
     if(BinarySearch(sorted_rect_list,area_list[i]))
       count++;
   }
-  std::cout<<count<<std::endl;
+  CreateLog(count);
 }
 
 void Controller::ReadRectangle(std::string filename) {
@@ -128,7 +129,7 @@ void Controller::SearchInLinear() {
     if(LinearSearch(rectangle_instance,area_list[i]))
       count++;
     }
-  std::cout<<count<<std::endl;
+  CreateLog(count);
   }
 
 void Controller::PrintRectanggleArea(std::vector<Rectangle> vec) {
@@ -154,4 +155,11 @@ bool Controller::IsBinary() {
     std::cin >> user_input;
   }
   return user_input=="b";
+}
+
+void Controller::CreateLog(int result) {
+  std::ofstream logfile;
+  logfile.open(logfile_name);
+  logfile<<result;
+  logfile.close();
 }

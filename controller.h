@@ -51,9 +51,10 @@ class Controller{
   void ReadArea(std::string filename);
   //Binary Search Algorithm
   bool BinarySearch(std::vector<Rectangle> &sorted_rectangle_array,int key);
-
+  //Linear Search Algorithm
   bool LinearSearch(std::vector<Rectangle> &rectangle_array,int key);
-
+  //create a log to record the result
+  void CreateLog(int result);
 
   std::vector<Rectangle> SortRectangle();
 
@@ -62,5 +63,6 @@ class Controller{
 
   std::vector<int> area_list;
   std::vector<std::vector<int>> rectangle_list;
+  std::string logfile_name;
 };
 #endif //RECTANGLE_SEARCH_CONTROLLER_H
