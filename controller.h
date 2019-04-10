@@ -10,6 +10,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <chrono>
 #include "exception.h"
 #include "rectangle.h"
 // A controller that split the task into parts
@@ -55,6 +56,8 @@ class Controller{
   bool LinearSearch(std::vector<Rectangle> &rectangle_array,int key);
   //create a log to record the result
   void CreateLog(int result);
+
+
 
   std::vector<Rectangle> SortRectangle();
 
