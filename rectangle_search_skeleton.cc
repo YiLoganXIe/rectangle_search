@@ -2,7 +2,7 @@
 using std::chrono::high_resolution_clock;
 using std::chrono::microseconds;
 int main(int argc, char *argv[]) {
-  auto task_control = Controller(argc,argv);      //initialize the program
+  auto task_control = Controller(argc,argv);      //initialize the program;
   high_resolution_clock::time_point beginTime;
   if(task_control.IsBinary()){
     beginTime= high_resolution_clock::now();

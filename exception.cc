@@ -4,7 +4,7 @@
 #include "exception.h"
 void CheckInputNum(int argc) {
   if(argc != 4){
-    std::cerr<<"Usage: rectangle_search_reference <rectangle_file.dat> <area_file.dat> <result_file.dat>"<<std::endl;
+    std::cerr<<"Usage: ./rectangle_search <rectangle_file.dat> <area_file.dat> <result_file.dat>"<<std::endl;
     exit(0);
   }
 }

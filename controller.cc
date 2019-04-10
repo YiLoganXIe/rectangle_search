@@ -105,8 +105,8 @@ bool Controller::BinarySearch(std::vector<Rectangle> &sorted_rectangle_array, in
   while (low <= high) {
     long mid = low + (high - low) / 2;
     if (sorted_rectangle_array[mid].GetArea() == key){
-      return true;}
-    if (sorted_rectangle_array[mid].GetArea() < key)
+      return true;
+    } else if (sorted_rectangle_array[mid].GetArea() < key)
       low = mid+1;
     else
       high = mid-1;
@@ -151,7 +151,7 @@ bool Controller::IsBinary() {
   std::string user_input;
   std::cin >> user_input;
   while (user_input != "b" and user_input != "l") {
-    std::cout << "Incorrect choice" << std::endl;
+    std::cerr << "Incorrect choice" << std::endl;
     std::cin >> user_input;
   }
   return user_input=="b";
@@ -160,6 +160,10 @@ bool Controller::IsBinary() {
 void Controller::CreateLog(int result) {
   std::ofstream logfile;
   logfile.open(logfile_name);
-  logfile<<result;
-  logfile.close();
+  if(logfile.is_open()) {
+    logfile << result;
+    logfile.close();
+  }
+  else
+    CannotOpenFile(logfile_name);
 }
