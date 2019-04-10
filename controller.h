@@ -27,13 +27,20 @@ class Controller{
 
   //Get a vector that contains rectangle coordinates
   std::vector<std::vector<int>> GetRectangleList();
+  //Use Binary search to search the area-rectangle pair
+  void SearchInBinary();
 
-  void BinarySearch();
-
+  std::vector<Rectangle> CreateRectangles();
+  //Use Linear Search to search the area-rectangle pair
+  void SearchInLinear();
+  //let the user input the algorithm which need to be used
+  bool IsBinary();
   //Print out area list             #just for test
   void PrintAreaList();
   //Print out rectangle list        #just for test
   void PrintRectangleList();
+  //Print out Sorted rectangle area       #just for test
+  void PrintRectanggleArea(std::vector<Rectangle> vec);
 
  private:
   //read the files
@@ -42,12 +49,18 @@ class Controller{
   void ReadRectangle(std::string filename);
   //read area file
   void ReadArea(std::string filename);
+  //Binary Search Algorithm
+  bool BinarySearch(std::vector<Rectangle> &sorted_rectangle_array,int key);
+
+  bool LinearSearch(std::vector<Rectangle> &rectangle_array,int key);
+
+
+  std::vector<Rectangle> SortRectangle();
 
   //split the line to get each number
   std::vector<int> Spilt(std::string line);
 
   std::vector<int> area_list;
   std::vector<std::vector<int>> rectangle_list;
-  std::vector<Rectangle> sorted_rectangle_list;
 };
 #endif //RECTANGLE_SEARCH_CONTROLLER_H
