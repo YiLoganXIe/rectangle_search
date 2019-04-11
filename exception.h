@@ -2,11 +2,13 @@
 // Created by yi on 4/8/19.
 //
 
-#ifndef RECTANGLE_SEARCH_EXCEPTION_H
-#define RECTANGLE_SEARCH_EXCEPTION_H
+#ifndef P1_EXCEPTION_H_
+#define P1_EXCEPTION_H_
 #include <stdlib.h>
 #include <iostream>
-//check the number of the arguments
+#include <string>
+// check the number of the arguments
 void CheckInputNum(int argc);
+// Shoot the CANNOT open file messege
 void CannotOpenFile(std::string filename);
-#endif //RECTANGLE_SEARCH_EXCEPTION_H
+#endif  // P1_EXCEPTION_H_

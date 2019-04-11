@@ -4,11 +4,11 @@
 #include "rectangle.h"
 
 int Rectangle::GetArea() {
-    return abs((x2-x1)*(y2-y1));
+    return (x2-x1)*(y2-y1);
 }
 
 bool Rectangle::operator<(Rectangle &rhs) {
-    if(this->GetArea() < rhs.GetArea()){
+    if ( this->GetArea() < rhs.GetArea() ) {
         return true;
     }
     return false;
